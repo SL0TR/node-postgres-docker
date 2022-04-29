@@ -1,0 +1,16 @@
+{
+  "name": "node-postgresql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server"
+  },
+  "repository": "git@github.com:SL0TR/node-postgresql.git",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
