@@ -1,15 +1,14 @@
-const { Client } = require("pg");
+import bodyParser from "body-parser";
+import express from "express";
+import studentRoutes from "./students/routes.js";
 
-const credentials = {
-  host: "localhost",
-  user: "postgres",
-  password: "postgres",
-  port: 5432,
-};
+const app = express();
+const port = 3000;
 
-const client = new Client(credentials);
+app.use(bodyParser.json());
 
-client.connect(function (err) {
-  if (err) throw err;
-  console.log("Connected!");
+app.use("/api/v1/students", studentRoutes);
+
+app.listen(port, () => {
+  console.log(`app listening on port:${port}`);
 });
